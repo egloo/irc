@@ -4,6 +4,7 @@ import random
 import re
 import sys
 import time
+import pprint
 
 # try:
 #     from gevent import socket
@@ -250,7 +251,7 @@ class IRCConnection(object):
             try:
                 data = self._sock_file.readline()
             except socket.error:
-                print(socket.error.strerror)
+                pprint.pprint(socket.error)
                 data = None
 
             if not data:
