@@ -90,7 +90,7 @@ class IRCConnection(object):
             self.logger.error('Unable to connect to %s on port %d' % (self.server, self.port), exc_info=1)
             return False
 
-        self._sock_file = self._sock.makefile('w')
+        self._sock_file = self._sock.makefile('b')
         if self.password:
             self.set_password()
         self.register_nick()
