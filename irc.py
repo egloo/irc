@@ -5,10 +5,12 @@ import re
 import sys
 import time
 
-try:
-    from gevent import socket
-except ImportError:
-    import socket
+# try:
+#     from gevent import socket
+# except ImportError:
+#     import socket
+
+import socket
 
 from logging.handlers import RotatingFileHandler
 from optparse import OptionParser
