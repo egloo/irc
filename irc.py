@@ -250,8 +250,8 @@ class IRCConnection(object):
         while 1:
             try:
                 data = self._sock_file.readline()
-            except socket.error:
-                pprint.pprint(socket.error)
+            except OSError as e:
+                pprint.pprint(e)
                 data = None
 
             if not data:
