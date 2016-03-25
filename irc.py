@@ -5,10 +5,12 @@ import re
 import sys
 import time
 
-try:
-    from gevent import socket
-except ImportError:
-    import socket
+# try:
+#     from gevent import socket
+# except ImportError:
+#     import socket
+
+import socket
 
 from logging.handlers import RotatingFileHandler
 from optparse import OptionParser
@@ -90,7 +92,7 @@ class IRCConnection(object):
             self.logger.error('Unable to connect to %s on port %d' % (self.server, self.port), exc_info=1)
             return False
 
-        self._sock_file = self._sock.makefile('b')
+        self._sock_file = self._sock.makefile('w')
         if self.password:
             self.set_password()
         self.register_nick()
