@@ -250,7 +250,7 @@ class IRCConnection(object):
             try:
                 data = self._sock_file.readline()
             except socket.error:
-                print(socket.error)
+                print(socket.error.strerror)
                 data = None
 
             if not data:
